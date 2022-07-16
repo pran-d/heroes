@@ -1,7 +1,6 @@
 import {useParams, useHistory} from 'react-router-dom';
 import { useState, useEffect } from "react"; 
 import useFetch from './useFetch';
-import {Link} from 'react-router-dom'; 
 
 const HeroDetails = () => {
     const { id } = useParams();
