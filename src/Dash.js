@@ -9,7 +9,7 @@ function Dash() {
         <div>
             {isPending && <div>Loading...</div>}
             {error && <div> {error} </div>}
-            {heroes && <HeroList heroes={heroes.filter(hero=>hero.id<=4)} title="Dashboard" />}
+            {heroes && <HeroList className1="hero-preview dashboard" heroes={heroes.filter(hero=>hero.id<=4)} title="Dashboard" />}
         </div>
     );
 }

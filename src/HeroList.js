@@ -1,17 +1,17 @@
 import {Link} from 'react-router-dom'; 
 
-const HeroList = ({heroes, title}) => {
+const HeroList = ({heroes, title, className1}) => {
     return(
         <div className="heroes">
             <h2>{title}</h2>
             {heroes.map(hero=>(
-                <div className="hero-preview" key={hero.id}>
-                    <div className="heroName">
-                        <Link to={`/heroes/${hero.id}`}>
-                             {hero.name}
-                        </Link>
+                <Link to={`/heroes/${hero.id}`}>
+                    <div className={className1} key={hero.id}>
+                        <div className="heroName">
+                                {hero.name}
+                        </div>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     )

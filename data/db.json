@@ -1,7 +1,7 @@
 {
   "heroes": [
     {
-      "name": "okay",
+      "name": "Pranav",
       "id": 1
     },
     {
@@ -27,6 +27,14 @@
     {
       "name": "Noah",
       "id": 7
+    },
+    {
+      "name": "Cyrus",
+      "id": 8
+    },
+    {
+      "name": "Jesse",
+      "id": 9
     }
   ]
 }

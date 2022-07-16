@@ -8,7 +8,7 @@ function Heroes() {
         <div>
             {isPending && <div>Loading...</div>}
             {error && <div> {error} </div>}
-            {heroes && <HeroList heroes={heroes} title='All Heroes' />}
+            {heroes && <HeroList className1="hero-preview" heroes={heroes} title='All Heroes' />}
         </div>
     );
 }

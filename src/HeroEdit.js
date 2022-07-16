@@ -1,13 +1,19 @@
-import { useState } from "react"; 
-import useFetch from './useFetch'
+import { useState, useEffect } from "react"; 
+import useFetch from './useFetch';
 import {useParams, useHistory} from "react-router-dom";
 
 const HeroEdit = () => {
     const { id } = useParams();
     const [name, setName] = useState('');
-    const {data: hero, isPending, error} = useFetch('http://localhost:8000/heroes/'+id);
     const [isUpdating, setIsUpdating] = useState(false);
     const history = useHistory();
+
+    useEffect(()=>{
+        async function FetchData(){
+            const {data: hero, isPending, error} = await useFetch('http://localhost:8000/heroes/'+id);
+            setName(hero.namoke);
+        }
+    }, [name])
 
     const handleSubmit = (e) => {
         e.preventDefault();
