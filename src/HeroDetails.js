@@ -1,5 +1,5 @@
 import {useParams, useHistory} from 'react-router-dom';
-import { useState, useEffect } from "react"; 
+import { useState } from "react"; 
 import useFetch from './useFetch';
 
 const HeroDetails = () => {
@@ -8,6 +8,13 @@ const HeroDetails = () => {
     const [isUpdating, setIsUpdating] = useState(false);
     const history = useHistory();
     const {data: hero, isPending, error} = useFetch('http://localhost:8000/heroes/'+id);
+    const [receivedData, setReceivedData] = useState(false);
+
+    if(hero&&!receivedData)
+    {
+        setName(hero.name);
+        setReceivedData(true);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,10 +36,14 @@ const HeroDetails = () => {
 
     return ( 
         <div className="detail-encloser">
-            <h2>Hero Details - {id} </h2>
+            <h2>Hero Details</h2>
             {isPending && <div>Loading...</div>}
             {error && <div> {error} </div>}
-            {hero && <div><span className="hero-details">Hero Name: </span>{hero.name}</div>}
+            {hero && 
+            <div className="current-name">
+                <span className="hero-details">Hero Name: </span>{hero.name}
+                <br/><span className="hero-details">Hero ID: </span>{id}
+            </div>}
             <form onSubmit={handleSubmit}>
                 <input 
                 type="text" 

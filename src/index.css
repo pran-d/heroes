@@ -37,6 +37,7 @@ button {
   color: black;
   font-size: 1.2rem;
   padding: 0.5rem;
+  margin-top: 1rem;
   margin-left: 1rem;
 }
 button:hover {
@@ -105,4 +106,8 @@ button:disabled {
 .detail-encloser{
   position: relative;
   text-align: center;
+}
+
+.current-name{
+  font-size: 110%;
 }
