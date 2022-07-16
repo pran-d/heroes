@@ -56,6 +56,8 @@ button:disabled {
 }
 
 .hero-preview {
+  text-align: center;
+  padding: 10px 5px 10px 5px;
   display: inline-flex;
   justify-content: center;
   min-width: 25%;
@@ -92,11 +94,6 @@ button:disabled {
 
 .links:hover {
   background-color:  rgb(198, 198, 247);
-}
-
-.heroName{
-  text-align: center;
-  padding: 10px 5px 10px 5px;
 }
 
 .hero-details{
